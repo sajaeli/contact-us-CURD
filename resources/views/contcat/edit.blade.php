@@ -12,17 +12,32 @@
 
               <div class="form-group">
                 <label>First Name</label>
-                <input type="text" name="FName" class="form-control" value="{{ $contcat->FName }}">
+                <input type="text" name="FName" class="form-control @error('FName') is-invalid @enderror" value="{{ $contcat->FName }}">
+                @error('FName')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
               </div>
               
               <div class="form-group">
                 <label>Last Name</label>
-                <input type="text" name="LName" class="form-control" value="{{ $contcat->LName }}">
+                <input type="text" name="LName" class="form-control @error('LName') is-invalid @enderror" value="{{ $contcat->LName }}">
+                @error('LName')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
               </div>
 
               <div class="form-group">
                 <label>Email</label>
-                <input type="email" name="Email" class="form-control" value="{{ $contcat->Email }}">
+                <input type="email" name="Email" class="form-control @error('Email') is-invalid @enderror" value="{{ $contcat->Email }}">
+                @error('Email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
               </div>
 
               <button type="submit" class="btn btn-primary mt-3">Submit</button>

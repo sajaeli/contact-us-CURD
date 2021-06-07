@@ -26,3 +26,6 @@ Route::get('contcat.create', [ContcatController::class, 'create'])->name('contca
 Route::get('contcat.edit/{id}', [ContcatController::class, 'edit'])->name('contcat.edit');
 Route::put('contcat.update/{id}', [ContcatController::class, 'update'])->name('contcat.update');
 Route::delete('contcat.destroy/{id}', [ContcatController::class, 'destroy'])->name('contcat.destroy');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
